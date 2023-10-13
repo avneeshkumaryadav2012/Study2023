@@ -1,0 +1,79 @@
+<html>
+
+<head>
+  <script>
+    //https://www.youtube.com/watch?v=23AOrSN-wmI
+    //camel notation:oneTwoThree
+    //pascal notation:OneTwoThree
+    //There are 7 ways to create object in javascript
+
+    //1-Literal object
+    const a={}
+     a['name']='shoeb'
+    console.log('a',a); //{name:'shoeb'}
+    
+    //2-Object literal Declare and Initialize
+    const b = {'name':'Prince'}
+    console.log('b',b); // {name:'Prince'}
+
+    //3-Object constructor
+    const c = new Object();
+    console.log('c',c); //{}
+    
+
+    //4-factory function
+    function createCircle(radius){
+      return {
+        radius,
+        draw(){
+          console.log('draw');
+          
+        }
+      }
+    }
+
+    const cir = createCircle(1) // here we don't need to add `new` operator to create object. It returns the object.
+    console.log(cir);
+    
+    //5-constructor function
+    function CreateCircle(radius){
+      this.radius= radius;
+      this.draw=function(){
+        console.log('draw');
+      }
+    }
+
+    const circle = new CreateCircle(1)
+    console.log(circle);
+      
+    //when new operator is used three things happens 
+    //1-create blank object {}
+    //2-It will set blank object to point 'this'
+    //3-'this' object is returned from the function internally.
+    //Both are used to create object constructor function is mostly used by people came from java, c# background.
+
+    //6-ES6 Using Class
+
+    class test{
+      constructor(){
+        console.log('test class');
+      }
+    }
+
+    const t = new test() // output test class
+
+    //7-Singleton pattern(it will only create single object)
+
+    const obj = new function(){ this.name = 'shoeb ansari'}
+
+    console.log('obj.name',obj.name); // 'shoeb ansari'
+    
+
+  </script>
+</head>
+
+<body>
+  <button id="myid">Click me</button>
+</body>
+
+</html>

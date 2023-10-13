@@ -1,0 +1,35 @@
+<!-- 
+Generators are special kind of function denoted by *, It is used to iterate the array, Yield is used to iterates,
+It can be stoped any time, Next yield works when 1st one is completed, It is mostly used to call apis.
+-->
+
+<!-- https://www.youtube.com/watch?v=TJpkYvSREtM -->
+
+<html>
+
+<head>
+  <script>
+    function* generator(){
+      yield 1
+      yield 2
+    }
+
+const iterator = generator();
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+// Output:
+// {value:1, done:false}
+// {value:2, done:false}
+// {value:undefined, done:true}
+
+  </script>
+
+</head>
+
+<body>
+  TEST
+</body>
+
+</html>

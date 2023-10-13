@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <script>
+  
+  // 1:-delete
+  const person = {
+    name:'shoeb',
+    address:'hardoi',
+    age:33,
+  }
+
+  delete person.age //delete is used to delete a property in object
+
+  console.log('person-->', person);
+
+  // Output:person={
+  //   name:'shoeb',
+  //   address:'hardoi'
+  // }
+
+  // 2:-pop and push
+
+  const fruits = ['banana','orange','apple']
+
+  fruits.push('mango') //Push will added elements in the last 
+  console.log('fruits', fruits);
+
+  fruits.pop()  //pop will remove element in the last.
+  console.log('fruits2', fruits);
+
+  //3:-how to add a property in object.
+    const person2= new Object();
+    person2.name='prince'
+    person2.age = 40
+    console.log('person2', person2); 
+
+    // output:{name:'shoeb', age:40}
+    
+    delete person2.age
+
+    console.log('person2-after delete', person2);
+    
+        // output:{name:'shoeb'}
+  
+  </script>
+</head>
+
+<body>
+TEST   
+</body>
+
+</html>

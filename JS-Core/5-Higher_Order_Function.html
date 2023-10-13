@@ -1,0 +1,39 @@
+<!-- 
+Higher order functions are functions that takes function as arguments or return function as their result.
+for example Map, filter and reduce are some of the built-in higher-order functions in JavaScript.
+-->
+
+<!-- https://www.youtube.com/watch?v=E1_VLQ9qxWQ -->
+
+<html>
+<head>
+  <script>
+   
+   const interviewQuestion=(name)=>{
+    if(name==='shoeb'){
+      return (topic)=>{
+        console.log(`Hi ${name}, What is ${topic} please explain`);
+      }
+    }
+    if(name==='Ansari'){
+      return  (topic)=>{
+        console.log(`Hi ${name}, What is ${topic} please explain`);
+      }
+    }
+   }
+   //First way to call HOF
+   interviewQuestion("shoeb")("UI");
+
+   //Second way to call HOF
+   const question = interviewQuestion("Ansari")
+   question("ASP.NET")
+   
+  </script>
+
+</head>
+
+<body>
+  TEST
+</body>
+
+</html>

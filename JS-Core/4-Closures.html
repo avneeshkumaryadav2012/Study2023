@@ -1,0 +1,39 @@
+<!-- 
+Closures is combination of a function bundled together(enclosed) with refrences of its surrounding state(the lexical environment).
+In other words, a closures gives access to outer function's scope from an inner function.
+In javascript closures are created everytime a function is created at a function creation time.
+OR
+function along with lexical scope bundle togther is know as Closures. 
+
+-->
+
+<!-- https://www.youtube.com/watch?v=qikxEIxsXco -->
+
+<html>
+<head>
+  <script>
+    const outerFun = ()=>{
+    const a=10
+     const innerFun=()=>{
+         console.log(a)
+     }
+     
+     innerFun()
+}
+
+
+outerFun()
+   
+  </script>
+
+  <!-- Output: 7 and Closure(x)->a:7 -->
+  <!-- If you put breakpoints at line 18:
+    It Means within y a is closures part of x environment 
+  -->
+</head>
+
+<body>
+  TEST
+</body>
+
+</html>

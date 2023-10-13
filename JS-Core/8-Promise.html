@@ -1,0 +1,73 @@
+<!-- 
+Promises are used to handle the asynchronous operations in javascript, They are easy to manage when dealing to multiple
+asynchrounous operations where callback create callback hell leading to unmanagble code
+Promise is an object that keeps track about whether a certain event has happened or not.
+-->
+
+<!-- https://www.youtube.com/watch?v=TJpkYvSREtM -->
+
+<html>
+
+<head>
+  <script>
+    // Example-1
+    // let promiseToCleanTheRoom = new Promise(function (resolve, reject) {
+    //   let isClean = true
+    //   if (isClean) {
+    //     resolve('Clean')
+    //   } else {
+    //     reject('Not clean')
+    //   }
+    // })
+    // promiseToCleanTheRoom.then(function (fromResolve) {
+    //   console.log(`the room is ${fromResolve}`);
+    // }).catch(function (fromReject) {
+    //   console.log(`The Room is ${fromReject}`);
+    // })
+
+    // Example-2
+
+    let cleanRoom = () => {
+      return new Promise(function (resolve, reject) {
+        resolve('Room Cleaned')
+      })
+    }
+
+    let removeGarbage = (message) => {
+      return new Promise(function (resolve, reject) {
+        resolve(`${message} Removed Garbage`)
+      })
+    }
+
+    let winIceCream = (message) => {
+      return new Promise(function (resolve, reject) {
+        resolve(`${message} Win Ice Cream`)
+      })
+    }
+
+   // using dependency when 1st is completed then only moves on 2nd then 3rd.
+    // cleanRoom().then(function (result) {
+    //   return removeGarbage(result)
+    // }).then(function (result) {
+    //   return winIceCream(result);
+    // }).then(function (result) {
+    //   console.log(`successfull ${result}`);
+    // })
+
+
+   // If want to push all togther(paraller) and does not care which one call first or second third.
+   // I mean no any sequence of call the use as following.
+    Promise.all([cleanRoom(), removeGarbage(), winIceCream()]).then(function(result){
+      console.log('All Done', result);
+      
+    })
+  
+  </script>
+
+</head>
+
+<body>
+  TEST
+</body>
+
+</html>

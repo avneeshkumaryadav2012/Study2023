@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <script>
+  //  call method is used to invoke the method directly by passing the refrence points to this variable inside the method.
+  //  apply method  is exactly the same as call it takes the second arguments as array list.
+  //  bind method does not direcly invokes the method but gives the copy of same method which can be invoked later.
+
+  let name = {
+    firstname:'shoeb',
+    lastname:'ansari'
+  }
+
+  let name2 = {
+    firstname:'naz',
+    lastname:'baili'
+  }
+
+ 
+ let printFullName = function (city, state){
+   console.log(this.firstname+" "+this.lastname+" " + city+" "+ state);
+ }
+
+//call
+printFullName.call(name,"kanpur", "UP")
+printFullName.call(name2,"lucknow", "UP")
+
+//apply
+printFullName.apply(name2,["lucknow", "UP"])
+printFullName.apply(name,["kanpur", "UP"])
+
+ //bind
+ let printName = printFullName.bind(name,"hardoi","UP")
+ printName();
+
+  </script>
+</head>
+
+<body>
+  sdkjfbdskjfb
+</body>
+
+</html>

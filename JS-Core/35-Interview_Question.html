@@ -1,0 +1,289 @@
+<!-- https://www.interviewbit.com/javascript-interview-questions/ -->
+
+<!-- 
+Q-1:-Primitive Data types
+A:-in Javascript there are 5 primitive data types undefined,null,boolean,string,number are available.Everything
+else in javascript is object or non-primitive type
+
+Q-2:-What is javascript BOM
+A:-BOM stands for Browser Object Modal that allows javascript to talk to browser.
+Like Window object
+
+Q-3:-What are the diffrent type of popup boxes are availble in javascript
+A:-Alert,Confirm,Promt
+
+Q-4:-what is console.log?
+The console object provides access to the browser's debugging console.
+The console object is a property of the window object.
+The console object is accessed with:
+window.console or just console
+
+Q-7:-hoisting in javascript?
+
+Hoisting is default behaviour of javascript where all the variables and functions declarions are moved on the top.
+this means that irrespective of where the variable and functions are declared, they are moved on the top of the scope.
+the scope can be both local and global.
+
+ex-1
+hoistedVariable = 3;
+console.log(hoistedVariable); // outputs 3 even when the variable is declared after it is initialized	
+var hoistedVariable;
+
+ex-2
+hoistedFunction();  // Outputs " Hello world! " even when the function is declared after calling
+
+function hoistedFunction(){ 
+  console.log(" Hello world! ");
+}
+
+ex-3
+// Hoisting takes place in the local scope as well
+function doSomething(){
+  x = 33;
+  console.log(x);
+  var x;
+}
+doSomething(); // Outputs 33 since the local variable “x” is hoisted inside the local scope
+
+**Note - Variable initializations are not hoisted, only variable declarations are hoisted:
+var x;
+console.log(x); // Outputs "undefined" since the initialization of "x" is not hoisted
+x = 23;
+
+**Note - To avoid hoisting, you can run javascript in strict mode by using “use strict” on top of the code:
+
+"use strict";
+x = 23; // Gives an error since 'x' is not declared
+var x; 
+
+Q-8:-Difference between “ == “ and “ === “ operators.
+The difference between both the operators is that,“==” is used to compare values 
+whereas, “ === “ is used to compare both value and types
+
+Q-9:-Is javascript a statically typed or a dynamically typed language?
+JavaScript is a dynamically typed language. In a dynamically typed language, the type of a variable is checked during run-time in contrast to statically typed language,
+where the type of a variable is checked during compile-time.
+
+Q-10:- Explain passed by value and passed by reference
+In JavaScript, primitive data types are passed by value and non-primitive data types are passed by reference.
+
+Q-11:- What is Polyfill?
+A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers 
+that do not natively support it.
+
+Q-12:- Explain the same-origin policy with regards to JavaScript?
+The same-origin policy prevents JavaScript from making requests across domain boundaries.
+An origin is defined as a combination of URI scheme, hostname, and port number.
+
+An origin is defined by the scheme (also known as the protocol, for example HTTP or HTTPS), 
+port (if it is specified), and host. When all three are the same for two URLs, they are considered same-origin.
+For example, http://www.example.com/foo is the same origin as http://www.example.com/bar but 
+not https://www.example.com/bar because the scheme is different.
+
+Q-12:-CORS(Cross origin resource sharing)
+https://www.youtube.com/watch?v=tcLW5d0KAYE
+
+Cors is mechanism which uses additional header to tell the browser whether a specific app can share resource with another 
+web app.
+both the app should have diffrent origin, if they are on same origin they can share data easily
+
+Like 
+http.shoeb.in it will not allow access to https.shoeb.in or api.shoeb.in or http.shoeb.in:8080 or google.com 
+
+A will send request to B as preflight call and the B will send reply to A with additional header whether A can acess 
+to B or not, Then A can send original request to fetch or post the Data to B.
+
+B send Header Accept-control-allow-origin if value is * means any public request can share the B server
+If
+B's accept-control-allow-origin:shoeb.in means onyl shoeb.in can access the B.
+Sometime http method such as get,post,delete can also be restricted.
+
+There are 2 kind of request 1 is simple request where prefligt call not used.
+
+To Resolve this
+1-Add extension from Google Crome Allow CORS
+2-Put domain name in Header's accept-control-allow-origin
+
+Q-14:- What advantages are using arrow functions?
+
+There are two major benefits of using Arrow functions. One is that it's a shorter syntax and thus requires less code. 
+The main benefit is that it removes the several pain points associated with the this operator.
+
+Q-15:- What is the purpose of setTimeout function?
+The setTimeout(cb, ms) the global function is used to run callback cb after at least ms milliseconds. 
+The actual delay depends on external factors like OS timer granularity and system load. 
+A timer cannot span more than 24.8 days.
+
+Q-16:- New features added in ES6?
+let, const, arrow function, map, classes, Promises, defaultParameter in function, 
+String.includes(), String.StartsWith(), String.EndWith(), Array.find(), Array.findIndex().
+
+Q-17:- How to import all exports of a file as an object.
+import * as objectname from ‘./file.js’
+
+Q-18:-List the comparison operators supported by Javascript?
+>,<,>=,<=,!=,==,===
+
+Q-19:-How do you declare variables in Javascript?
+In Javascript variable are declared using the var keyword.A variable must begin with A letter, $ or _
+PS: All variables in Javascript are Case sensitive.
+
+Q-20:-What will happen if an infinite while loop is run in Javascript?
+The program will crash the browser.
+
+Q-21:-List HTML DOM mouse events?
+onclick,ondblclick,mousemove,mouseover,mouseout,mouseup,mousedown
+
+Q-22:-How to get the last index of a string in Javascript?
+string.length-1
+
+Q-23:-How can you create an array in javascript?
+By Array literal
+var myArray = ["1","2","3"]
+By creating instance of array
+var myArray = new Array()
+By using an array constructor
+var myArray = new Array('1','2',3)
+
+Q-24:-How to add/remove properties to object dynamically in Javascript?
+const abc={firstname:'shoeb', lastname:'ansari'}
+abc.address='hardoi'
+delete abc.firstname
+console.log(abc)
+
+Q-25:-How to get inner Html of an element in JavaScript?
+document.getElementById("inner").innerHTML ;
+
+Q-26:-How to clone an object in Javascript?
+var x = {myProp: "value"};
+var y = Object.assign({},x)
+console.log(y) // {myProp: "value"};
+
+Q-27:-What are the types of errors in javascript?
+
+1-RangeError->
+const arr = [90,88]
+arr.length=90**99
+console.log(arr)
+
+will through out of range error.
+
+2-ReferenceError->
+console.log(a)  
+let a =10
+
+3-Syntax error:  
+Syntax errors are mistakes or spelling problems in the code that cause the program to not execute at all or 
+to stop running halfway through. Error messages are usually supplied as well.
+cst a =10
+console.log(a)  //syntext error
+
+4-TypeError
+const num = 123
+console.log(num.toUpperCase())  //Type Error
+
+Logical error: Reasoning mistakes occur when the syntax is proper but the logic or program is incorrect. The application 
+executes without problems in this case. However, the output findings are inaccurate. These are sometimes more difficult to 
+correct than syntax issues since these applications do not display error signals for logic faults.
+
+Q-28:-DESTRUCTURING ARRAY
+
+Befor 
+const vehicles = ['mustang', 'f-150', 'expedition'];
+const car=vehicles[0]
+const truck = vehicles[1]
+const suv = vehicles[2]
+
+Now
+const [car, truck, suv] = vehicles;
+When destructuring arrays, the order that varibles are declared is important.
+
+Object destructuring
+const vehicleOne = {
+  brand: 'Ford',
+  model: 'Mustang',
+}
+
+const {brand, model} = vehicleOne;
+console.log('brand', brand);  //'Ford'
+console.log('model', model);  //Mustang
+
+Q-29:-ES6 SPREAD OPERATOR
+The javascript spread(...) operator allows to quick copy or part of existing array or object into another array or object.
+1-
+const numberOne = [1,2,3]
+const numberTwo = [4,5,6]
+const numberCombined = [...numberOne, ...numberTwo]
+console.log('numberCombined', numberCombined);  //[1,2,3,4,5,6]
+
+2-
+const number  = [1,2,3,4,5,6]
+const [one, two, ...rest] = number;
+console.log('one',one,'two',two,'rest',rest); // one 1 two 2 rest [3,4,5,6]
+     
+3-
+Spread Operator with object
+const myVehicle = {brand:'Hydai', color:'Red', model:'2021'}
+const updatedVehicle = {number:'1023', size:'L1'}
+const combineVehicle = {...myVehicle, ...updatedVehicle}
+console.log(combineVehicle); // { brand: 'Hydai',color: 'Red',model: '2021',number: '1023',size: 'L1' }
+
+const spreadFun = (...inputs)=>{
+  console.log(inputs) //[1,2,3,4,5]
+  console.log(...inputs)  //1,2,3,4,5
+}
+spreadFun(1,2,3,4,5)
+
+Q-30:-ES6 DEFAULT PAREMETER
+
+  const defaultFun=(a=1,b=1)=>{
+      return a+b
+  }
+  console.log(defaultFun(1,2))  // 3
+  console.log(defaultFun(10))  // 11
+
+Q-31:-Template literals
+// using backtik for template literals or template string
+const age =32
+console.log("My name is shoeb"+"My age is:"+ age)
+console.log(`My name is shoeb My age is: ${age}`)  
+
+Q-32:-Swaping values using destructure
+
+let a=10;
+let b=20;
+
+before
+let temp=a
+a=b
+b=temp
+console.log('a',a,'b',)
+
+Now
+[a,b]= [b,a]
+console.log('a',a,'b',b)
+
+Q-33:-unshift
+This method is functional at the starting of the array, unlike the push(). It adds the desired number of elements to the top of 
+an array.
+var name = ["john"];
+name.unshift( "charlie" );
+name.unshift( "joseph", "Jane" );
+console.log(name);  // [" joseph ,"," Jane ,", " charlie ", " john "]
+
+Q-34: What are the escape characters in JavaScript?
+\b – Backspace, \n – Newline, 
+
+-->
+
+
+
+
+<html>
+<head>
+</head>
+<body>
+  TEST
+</body>
+
+</html>

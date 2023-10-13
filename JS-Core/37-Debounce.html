@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <script>
+    //debounce is a method created on a button click so that if countine clicked on this it should not respond immidiately
+    //should take some delay on each click.
+    // const onClickButton = () => {
+    //   debounce(e => {
+    //     console.log('onClicked');
+    //   }, 2000)
+    // }
+    window.onload = function () {
+      const debounce = (fn, delay) => {
+        let timeoutID
+        return function () {
+          if (timeoutID) {
+            clearTimeout(timeoutID)
+          }
+          timeoutID = setTimeout(() => {
+            fn()
+          }, delay)
+        }
+      }
+      document.getElementById("myid").addEventListener("click", debounce(() => {
+        console.log('Clicked');
+      }, 2000))
+    }
+  </script>
+</head>
+
+<body>
+  <button id="myid">Click me</button>
+</body>
+
+</html>

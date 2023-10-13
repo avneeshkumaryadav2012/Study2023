@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <script>
+    //Type Conversion
+
+    //Number to String
+    // 2 ways to convert Number to String  
+    let myVar = String(20)
+    console.log(myVar, typeof myVar);  // 20 string
+    
+    let myVar2 = (20).toString();
+    console.log(myVar2, typeof myVar2);  // 20 string
+    
+    //String to Number
+    let myVar3 = "123"
+    console.log(Number(myVar3), typeof myVar3);  //123 number
+    
+    let myVar4  = "123D"
+    console.log(Number(myVar4), typeof myVar4);   //NAN string
+    
+    let myVar5  = "123D56"
+    console.log(parseInt(myVar5), typeof myVar5);   //123 string
+
+    //Bool to Number
+    let myVar6 = true
+    console.log(Number(myVar6), typeof myVar6);  // 1 boolean
+
+    //Array to String
+    
+    let myArray = [1,2,3]
+    let myString = String(myArray)
+    console.log(myString, typeof myString);  // 1,2,3 string 
+
+  
+  //TYPE COERCION
+    
+  // When string and number are added, they actually concatinate, that is known as type Coercion
+
+  let myNumber = 123
+  let myString2 = "45"
+
+  console.log(myNumber+myString2);  //12345
+  
+    
+  </script>
+</head>
+
+<body>
+   sdfsdf
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<html>
+
+<head>
+  <script>
+    //1-To check object is array or not.
+    var arrayList = [1, 2, 3];
+    console.log(Array.isArray(arrayList))
+
+    //2-To check type of any object
+    var arrayList = 1;
+    console.log(typeof arrayList)
+
+    //3- how to check no is integer
+    const a = 1.2
+    console.log('3', typeof a);
+
+    //4-code
+    function func1() {
+      setTimeout(() => {
+        console.log(x);
+        console.log(y);
+      }, 0);
+
+      var x = 2;
+      let y = 12;
+    }
+    func1();
+    //output: 2 12
+    //Reason:even though let variables are not hoisted, due to the async nature of javascript, the complete function code 
+    //runs before the setTimeout function. Therefore, it has access to both x and y.
+    
+    //5-code
+    function func2() {
+      for (var i = 0; i < 2; i++) {
+        setTimeout(() => console.log(i), 2000);
+      }
+    }
+    func2();
+    //output 2 2
+    //Reason: variable declared with var keyword does not have block scope. Also, inside the for loop, the variable i is 
+    //incremented first and then checked.
+
+    //6-code
+    (function(){
+    setTimeout(()=> console.log(1),2000);
+    console.log(2);
+    setTimeout(()=> console.log(3),0);
+    console.log(4);
+    })();
+    //output 2 4 3 1
+
+    //7-code
+    let x= {}, y = {name:"Ronny"},z = {name:"John"};
+    x[y] = {name:"Vivek"};
+    x[z] = {name:"Akki"};
+    console.log(x[y]); //{ name: 'Akki' }
+
+    //8-code
+    function runFunc(){
+    console.log("1" + 1); //11
+    console.log("A" - 1); //NAN
+    console.log(2 + "-2" + "2"); //2-22
+    console.log("Hello" - "World" + 78);//NAN
+    console.log("Hello"+ "78"); //hello78
+    }
+    runFunc();
+
+    //9-code
+    let a = 0;
+    let b = false;
+    console.log((a == b)); //true
+    console.log((a === b)); //false
+
+    //10-code
+    var x = 23;
+
+    (function(){
+    var x = 43;
+    (function random(){
+    x++;
+    console.log(x); //NAN
+    var x = 21;
+    })();
+    })();
+
+    //11-Code
+    let hero = {
+    powerLevel: 99,
+    getPower(){
+      return this.powerLevel;
+    }
+  }
+  
+  let getPower = hero.getPower;
+  
+  let hero2 = {powerLevel:42};
+  console.log(getPower());  //undefined
+  console.log(getPower.apply(hero2)); //42
+
+  //Reason for undefined - The first output is undefined since when the function is invoked, it is invoked referencing the 
+  //global object:
+
+  //12-Code
+  const a = function(){
+    console.log(this);  //Window
+  
+    const b = {
+      func1: function(){
+        console.log(this);   //func1
+      }  
+    }
+  
+    const c = {
+      func2: ()=>{
+        console.log(this);  //Window(because using this inside fat arrow function)
+      }
+    }
+  
+    b.func1();
+    c.func2();
+  }
+  
+  a();
+
+  //13-code
+  const b = {
+    name:"Vivek",
+    f: function(){
+      var self = this;
+      console.log(this.name);  //Vivek
+      (function(){
+        console.log(this.name); //undefined
+        console.log(self.name); //Vivek
+      })();
+    }
+  }
+  b.f();
+
+ //Reason:Only in the IIFE inside the function f, this keyword refers to the global/window object.
+ 
+
+  //14-code
+  (function(a){
+  return (function(){
+  console.log(a); //45
+  a = 23;
+  })()
+})(45);
+
+//15-Code
+// Each time bigFunc is called, an array of size 700 is being created,
+// Modify the code so that we don't create the same array again and again
+
+function bigFunc(element){
+  let newArray = new Array(700).fill('♥');
+  return newArray[element];
+}
+
+console.log(bigFunc(599)); // Array is created
+console.log(bigFunc(670)); // Array is created again
+
+//Solution
+//This code can be modified by using closures,
+function bigFunc(){
+  let newArray = new Array(700).fill('♥');
+  return (element) => newArray[element];
+}
+
+let getElement = bigFunc(); // Array is created only once
+getElement(599);
+getElement(670); 
+
+//16-code
+const b = [1, 2, 3];
+
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(b[i]), 1000);
+}
+
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(b[i]), 1000);
+}
+
+//output 1 2 3 undefined undefined undefined
+  </script>  
+</head>
+
+<body>
+  sdfsdfsdf
+</body>
+
+</html>

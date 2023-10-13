@@ -1,0 +1,59 @@
+<!-- 
+This refrences the object that is executing the currect function.
+if the function is part of object then this will references to currect object.
+if function is regular funtion then this will references to global object(Window).
+-->
+
+<!-- https://www.youtube.com/watch?v=gvicrj31JOM -->
+
+<html>
+
+<head>
+  <script>
+    // Example-1
+    // if the function is part of object then this will references to currect object.
+    // const video={
+    //   title:'a',
+    //   play(){
+    //     console.log(this);    
+    //   }
+    // }
+    // video.play()
+
+    // // Output:
+    // // {title: 'a', play: ƒ}
+
+  // Example-2
+  // if function is regular funtion then this will references to global object(Window).
+  var SHOEBVAR ='SHOEB123123'
+  function TestPlay(){
+    var test = 'LUCNNOW'
+    console.log('SHOEB', this); 
+  }
+  console.log(window.SHOEBVAR);
+
+  // output:
+  // Window object
+
+  // Example-3
+    // function video(title){
+    //   this.title=title;
+    //   console.log(this);
+    // }
+
+    //const v = new video('shoeb');  //{} THIS REFRENCE TO EMPITY OBJECT
+
+    // When you use new operator then it create new empity({}) object
+    // output:
+    // video {title: 'shoeb'}
+
+  </script>
+
+
+</head>
+
+<body>
+  TEST
+</body>
+
+</html>

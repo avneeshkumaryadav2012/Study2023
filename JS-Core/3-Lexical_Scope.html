@@ -1,0 +1,51 @@
+<!-- 
+Nested function(child function) has access to the variable declare in their outer space(parent function).
+
+-->
+
+<!-- https://www.youtube.com/watch?v=Qist9lND9PQ&t=250s -->
+
+<html>
+<head>
+  <script>
+    // Example-1
+  //  var a = 'hello'
+  //   const first = ()=>{
+  //     var b = ' shoeb'
+  //     const second = ()=>{
+  //       var c  = ' ansari'
+  //       console.log(a+b+c);  
+  //     }
+  //     second();
+  //   }
+  //   first();
+  // Output: hello shoeb ansari
+
+
+   // Example-2
+   var a = 'hello'
+    const first = ()=>{
+      var b = ' shoeb'
+      const second = ()=>{
+        var c  = ' ansari'
+        console.log(a+b+c);
+        three();  
+      }
+      second();
+    }
+
+    const three=()=>{
+      const d='hardoi'
+      console.log(a+b+c+d); 
+    }
+    first();
+
+    // Output: b is not defined because function three has access of itself and global scope.
+  </script>
+</head>
+
+<body>
+  TEST
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!-- https://www.youtube.com/watch?v=SHINoHxvTso -->
+
+<html>
+<head>
+  <script>
+    //1-
+    a = 5 + "9";
+    document.write(a); // 59
+     
+    //2-
+    var a = "Scaler";
+    var result = a.substring(2, 4);
+    document.write(result);  //al
+    //Reason:The substring function in javascript slices a substring out of a given string from the start to end 
+    //indexes(excluding the end index). So the 2nd and 3rd characters are taken here(0-based indexing) and the answer is al.
+
+    //3-
+    //eval is global function in javascript that evaluates a specified string as javascript code and executes it
+    //eval evaluates or executes an arguments.
+    //always avoids it to use takes up lot of memery.
+    console.log(eval(10+20)) //30
+    let x=10
+    let y=20
+    console.log(eval("x+y"))  // 30
+    console.log(eval("x+y")===eval("30"))  //true
+
+    //4-. 
+    //What keyword is used to check whether a given property is valid or not?
+    //in keyword is used.
+    const car = { make: 'Honda', model: 'Accord', year: 1998 };
+
+    console.log('make' in car)   //true 
+
+    //5-
+    var a = Math.max();
+    var b = Math.min();
+    console.log(a);   // -infinity
+    console.log(b);   // infinity
+
+    //6-
+    console.log(Math.sqrt(81))  // 9
+
+    //7-
+    console.log(NaN === NaN);  // false
+
+    //8-
+    console.log(typeof(NaN));  // number
+
+    //9-
+    var a ='assd'
+    console.log(a.to)
+
+    //10-
+    const obj1={name:'shoeb'}
+    const obj2={name:'shoeb'}
+
+    console.log(obj1===obj2)  //false
+    //Reason: The strict equality operator compares objects by their references so even though the contents of both objects are 
+    //the same, their references don’t match resulting in false.
+
+    //-11
+    function dog() {
+      console.log("I am a dog.");
+    }
+    dog.sound = "Bark";
+
+    //Nothing will happen, no error would be there.
+
+    //12-
+    //Which object in Javascript doesn’t have a prototype?
+    //Base objects
+
+   //13-
+   function test(...args) {
+      console.log(typeof args);
+    }
+    test(12);  //Object
+
+    //14-
+    const obj1 = {first: 20, second: 30, first: 50};
+    console.log(obj1);  //{first:50,second:30}
+
+    //15-
+    setTimeout(()=>{
+      console.log('1')
+    },0)
+
+    console.log('2')
+    Promise.resolve().then(()=>{
+      console.log('3')
+    })
+
+    setTimeout(()=>{
+      console.log('4')
+    },0)
+
+    console.log('5')
+    // 2 5 3 1 4 
+
+    //16-
+    var x=10;
+    var x;
+    console.log(x)  // 10
+
+    //17-
+    var x=10;
+    var x=1;
+    console.log(x)  // 1
+
+    //18-
+    console.log(x)  // Reference Error: x is not defined
+    x="shoeb"
+    console.log(x)  //shoeb
+
+    //19-
+      // <script>
+      //   "use strict"
+      //   const addFun = (a,b)=>{
+      //     add = a+b;   // will through reference error here is strict mode use else will work fine.
+      //     return add
+      //   }
+      //   const c = addFun(10,20)
+      //   console.log('c', c)
+    //20-Netscape company had developed the JavaScript Programming Language.
+    //21- Can redirection of a page is possible in JavaScript?
+    //window.location.href  = (“http//jaquar.com”);
+
+    //22 https://www.youtube.com/watch?v=sXV_31fwetY
+    //key as an object
+    const x= {}
+    const a={}
+    x[a] = 'a'
+    console.log(x)  // {[object Object]: "a"}
+    console.log(x[a]) // a
+    
+    //another one
+    const x= {}
+    const a={}
+    const b={num:1}
+    x[a] ='a';
+    x[b] ='b'
+    console.log(x);  // {[object Object]: "b"}
+    //javascript object supports only 1 key object it replaces previous one. that's why we need maps to have multiple object.
+
+    //Map
+    const a={}
+    const b={num:1}
+
+    const map = new Map()
+    map.set(a,'a')
+    map.set(b, 'b')
+   // map.set(a,'a').set(b,'b') it also can be used this way.
+    console.log(map);  //Map { {} => 'a', { num: 1 } => 'b' }
+    //map.set(a,'a').set(b,'b').set(a,'c') 
+    //console.log(map); //  Map { {} => 'c', { num: 1 } => 'b' }  replaces previous a
+    //to delete
+    //map.delete(b)
+    //console.log(map);  //Map { {} => 'a' }
+    //to loop this
+    for(let [key, value] of map.entries()){
+      console.log(key, value);  //   {} 'c' { num: 1 } 'b'
+    }
+
+    //It also converts this into 2 dimentional array
+
+    const ary= [...map]
+
+    console.log(ary);    // Array[[{},"c"][{num:1}, "b"]]
+    
+
+
+    
+    
+
+    //https://www.youtube.com/watch?v=iccdL8-SF7c
+  </script>
+</head>
+<body>
+  TEST
+</body>
+
+</html>

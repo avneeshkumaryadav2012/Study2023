@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <script>
+    //Javascript is prototype base language,bydefault every function has a property called prototype,
+    //every function expression is constructor in javascript.
+
+    // var x= function(j){
+    //   this.i=0
+    //   this.j = j
+    //   this.getj=function(){
+    //     return this.j
+    //   }
+    // }
+
+    // var x1=new x(1)
+    // var x2=new x(2)
+    // console.log(x1.getj());
+    // console.log(x2.getj());
+
+    //x1,x2 inharits all the property and function of x, x is parent class
+    // output:1 2
+    
+    //already mentioned that every function has a property name prototype So now
+   
+  //  var x= function(j){
+  //     this.i=0
+  //     this.j = j
+  //   }
+
+  //   x.prototype.getj=function(){
+  //       return this.j
+  //     }
+
+  //   var x1=new x(1)
+  //   var x2=new x(2)
+  //   console.log(x1.getj());  
+  //   console.log(x2.getj());
+
+    // output:1 2
+
+    //javascript will look into getj method in function x if it does not find that then will look into its parent 
+    //means to its prototype 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Every object in javascript is created from its master object.
+
+var x = function(){
+}
+
+console.dir(x)
+
+// output:
+// funtion x()->__proto__:->__proto__->object(master object) this is knows as prototype chain
+
+
+  </script>
+</head>
+
+<body>
+   sdfsdf
+</body>
+
+</html>

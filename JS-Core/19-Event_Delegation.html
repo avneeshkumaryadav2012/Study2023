@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <script>
+  //Event Delegations
+  // DOM event delegation is used for responding to user events via single parent rather than each child.
+  // With it, you can bind event handler to a common parent element that will handle any event happning 
+  // on one of its children.
+
+  // Old way without event delegation
+  // const grandParent = ()=>{
+  //   alert('Grand parent callled')
+  //   console.log('grand parent clicked');  
+  // }
+  // const parent =()=>{
+  //   alert('parent callled')
+  //   console.log('parent clicked');  
+  // }
+  // const child=()=>{
+  //   alert('child callled')
+  //   console.log('child clicked'); 
+  // }
+
+  //Using Event delegation
+   const grandParent = (event)=>{
+     console.log('event', event);
+     
+    if(event.target.id==="child"){
+      alert('child callled')
+      console.log('child called');
+    } 
+    if(event.target.id==="parent"){
+      alert('parent called')
+      console.log('parent called');
+    } 
+    if(event.target.id==="grandParent"){
+      alert('grandParent called')
+      console.log('grandParent called');
+    } 
+  }
+  </script>
+</head>
+
+<body>
+    <div class="grandParent" id="grandParent" style="width: 200px; height: 200px; border: 1px solid black;" onclick="grandParent(event)" >
+        <div class="parent" id="parent"  style="width: 100px; height: 100px; border: 1px solid black;" >
+          <div class="child" id="child" style="width: 70px; height: 70px; border: 1px solid black;">
+            Event delegation
+          </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!-- 
+  https://www.youtube.com/watch?v=SHINoHxvTso 
+  https://www.youtube.com/watch?v=HsBi1l0ijQk
+-->
+
+<html>
+<head>
+  <script>
+    //Tempoary Dead Zone
+    //console.log(a) 
+    //will through references error: can not access a before initialization.
+    //On breakPoint:-memory is being assigned to variable a shows undefined but no initialized, stored in separate memory(reserved for let and const)
+    //not in global scope, when value is being assiged to a at that time TDZ ends
+    //That phase from hoisting to assign value to variable is known as TDZ.
+
+    //let a = 10 
+    // the code between console.log(a)  to let a = 10 is known as TDZ.
+
+    //console.log(x) 
+    // Reference Error: x is not defined, means x is no where in whole scope.
+    //means nowhere it is hoisted.
+
+    //2-if there is Syntax error then no code will be executed in file.
+     //console.log('sfdsfsdfs')
+     //let c=10
+     //let c=20;  //Or var c=20
+     //will through error saying Syntax Error no any line of the code will be executed.
+
+     //3-No Error if same name with var is declared
+     var d=10
+     var d=30
+     console.log(d);  //30
+
+     //4-Const, it should be initialized and declare together
+     const f=10
+     f=20;
+     console.log(f); 
+     //TypeError: assignment to const variable.
+     //TypeError: type of const can not updated that's why known as type error.
+     
+     
+  </script>
+</head>
+<body>
+  TEST
+</body>
+
+</html>

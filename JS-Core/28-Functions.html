@@ -1,0 +1,58 @@
+<!-- https://www.youtube.com/watch?v=SHINoHxvTso -->
+
+<html>
+<head>
+  <script>
+
+   // a(); // works fine
+   // b(); // reference error: cannot access b
+    
+    //1-function statement also know as function declaration.
+    function a(){
+      console.log('a');
+    }
+    //2-function expression(if fuction is created using = sign and also const and let not defined in global object)
+    const b = function(){
+      console.log('b');
+    }
+
+    //difference between both are hoisting function statement a is called if we call it before initialize, but will through error
+    //when trying to call function expression before it initialize.
+
+    //3-Anonymous function->can not be created like this without in other any function,
+    //It will through syntax: function statement requires a function name.
+    //Or anonymous function are used in values like function expression
+
+  //  function(){
+  //     console.log('c');
+  //   }
+
+  //4-Named function expression
+  //similar to function expression with function name
+  const c = function abc(){
+      console.log('b');
+      console.log(abc); // it can be accessed with that     
+    }
+
+    c();// b
+    abc()//referene error
+
+  //5-differences between parameter and aurguments
+
+  const d = function (param1,param2){  //these are parameters
+      console.log('b');
+      console.log(abc); // it can be accessed with that 
+      
+    }
+
+    d(10,11); // known as aurguments
+
+    //6-first Class function(or first class citizens)->ability to pass function as argument or return a function from other function or 
+    //assign a function to variable is known as first class function  .
+  </script>
+</head>
+<body>
+  TEST
+</body>
+
+</html>

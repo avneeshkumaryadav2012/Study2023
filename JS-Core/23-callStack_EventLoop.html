@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <script>
+   -------------------------------------------------------------------------------------------------------------------------------
+   |//Browser
+   |
+   |-------------------------------------------------                        --------------------------------
+   |                                                 |                      |//WebApi                       |
+   | //Runtime/execution context                     |                      |                               |
+   |                                                 |                      |   AJAX,setTimeOut,DOM         |
+   |                                                 |                      |                               |
+   |                                                 |                      |                               |
+   |--------------------- ---------------------      |                       --------------------------------                                        
+   |                     |                           |
+   |                     |       //CallStack         |                      --------------------------------
+   |         //Heap      |                           |                      |                               |
+   |                     |                           |                      |       //Event Loop            |
+   |                     |   //all functions         |                      |                               |
+   |     // all varialbes|                           |                      --------------------------------
+   |     //and function  |                           |
+   |     //with key/value|                           |
+   |     //pair          |                           |
+   |                     |                           |
+   |                     |                           |                      |------------------------------------------
+   |                     |                           |                      |   //Task Queue                           |
+   |                     |                           |                      | //Microtask queue->promise,async function|
+   |                     |                           |                      |------------------------------------------|
+   |                     |                           |                      |     Callback                 callback    |
+   |                     |                           |                      | //Macrotask queue->setTimeout/setInterval|
+   |                     |                           |                      |                                          |
+   |-------------------------------------------------                       --------------------------------------------
+   -----------------------------------------------------------------------------------------------------------------------------
+
+//javascript was written for web browser,these are above components in browser,
+//Runtime->each browser has its own runtime, google crome has v8 engine, runtimes are single threaded,
+//CallStack-> like an array, as functions calls it goes to stack.
+//Heap->all varibles in program defined in heap memory,
+//Web API->Ajax call, api calls, setTimeout functions which are taking time then all moved to webapi. webapi calls
+//parell executes to line by line code of javascript executes
+//Task queue->asyncronous call response send to the task queue via callbacks, all callbacks puts into task queue.
+//Event Loop->It keeps tracks task queue and call stack, checks if callStack is empity then puts callback to callStack
+// waits untill callstack is not empity means after all the works of syncronus call in javascript finishes.
+//callback of Microtask will executes first after that Macrotask will be executed.
+
+//All details in short->
+//Each functions executes in callstack syncrounously if there is any call of ajax means asyncrounous call then it goes
+//to WebAPI and callstack goes on paralel, after executing of ajax call it send to task queue, and event loop checks callstack and task queue
+//if callstack is empity then it sends callback to callstack.
+//function execution in callStack creates global exection context(GEC)
+
+</script>
+</head>
+
+<body>
+  sdfsdf
+</body>
+
+</html>

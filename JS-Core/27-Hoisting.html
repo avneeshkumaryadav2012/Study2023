@@ -1,0 +1,40 @@
+<!--
+   https://www.youtube.com/watch?v=SHINoHxvTso
+   https://www.youtube.com/watch?v=_FmHfOqJ4SY
+ -->
+
+<html>
+<head>
+  <script>
+    //Hoisting-> memory is being assigned at the first line of the program for every variable and function in global object.
+  
+  //1-
+  //   console.log(x)  //undefined
+  //   console.log(getName) //getName function initialization
+  //   console.log(getName()); // console getName
+    
+  //   var x=10
+  //  function getName(){
+  //    console.log('console getName');
+  //  }
+
+  //2-
+  //console.log(x)  // Reference Error: x is not defined
+
+  //3-
+   console.log(getName())  // Reference Error: can not acccess get name because getName is variable which is undefined in global 
+                            //object  
+
+   const getName = ()=>{    //whether it is const or var in both the case it will through the error.
+     console.log('Getname Arrow function');
+   }
+
+   //Hoisting not work with let and const only var case it works.
+   //Function expression and class expression are not hosted
+  </script>
+</head>
+<body>
+  TEST
+</body>
+
+</html>

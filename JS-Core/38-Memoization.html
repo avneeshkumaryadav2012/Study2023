@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <script>
+    //momoization returns already stored value in cache
+
+    const addNumber=()=>{
+      let cache={};
+      return (num)=>{
+        if(num in cache){
+          console.log('cache',cache);     
+          return cache[num]
+        }
+        else
+        {
+          let result;
+          result=num+1
+          cache[num] = result
+          return result
+        }
+      }
+    }
+
+    const addedNumber = addNumber()
+    console.log(addedNumber(10));
+    console.log(addedNumber(11));
+    console.log(addedNumber(10));
+    
+  </script>
+</head>
+
+<body>
+  <button id="myid">Click me</button>
+</body>
+
+</html>

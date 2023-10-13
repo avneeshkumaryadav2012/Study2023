@@ -1,0 +1,51 @@
+<!-- 
+Anonymous function don't have name of the function, 
+function without name is known as anonymous function.
+Can be stored in a variable
+Returning anonymous function
+passing anonymous function as aurgument.
+-->
+
+<!-- https://www.youtube.com/watch?v=1ve_KUCOq98 -->
+
+<html>
+
+<head>
+  <script>
+    //1- Can be stored in a variable
+    // const a =function(){
+    //   console.log('Anonymous function');
+    // }
+    // a();
+
+    //2- Returning anonymous function
+    // const f1 =function(a){
+    //    return function(b){
+    //      return (a+b)
+    //    }
+    // }
+
+    // const test = f1(10)
+    // console.log(test(20));
+    // Output:30
+    // https://www.youtube.com/watch?v=DC1ZUU_Ve7w
+
+    //3-passing anonymous function as aurgument.
+    function disp(myFun){
+      return myFun();
+    }
+
+    console.log(disp(function(){
+      return 'Hello'
+    }))
+ 
+  </script>
+
+
+</head>
+
+<body>
+  TEST
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!-- 
+Var is function scoped whereas let or const is block scoped.
+Var can be accessed anywhere within the function while let or const could not be accessed out of blocked scope.
+If Var and let both are defined at global level, then var object is attached with window object but not let.
+
+VAR
+1-Variables declared with var are function-scoped. This means that if a variable is declared anywhere else besides a function using var,
+ it will always exist in the global scope.
+2-Variable declared using var can be redeclared as well.
+
+Let
+1-The ES6 introduced the let keyword, which lets you define variables that are block-scoped.
+2-As with variables declared with const, the variables declared with let cannot be redeclared.
+
+Const
+1-const is block-scoped. This means that the variable declared with const cannot be redeclared or reassigned.
+2-declaration and assignment will be together  for const, can not only be declared.
+-->
+
+<!-- https://www.youtube.com/watch?v=XgSjoHgy3Rk -->
+
+<html>
+<head>
+  <script>
+    function start(){
+      for(var i=0;i<5;i++){
+        if(true){
+          var color='red'
+        }
+      }
+      console.log(color);
+      
+    }
+    start();
+     // It will return 'red', but if you define let instead of var for color varible it gives error-'color not defined'
+  </script>
+</head>
+
+<body>
+  TEST
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!-- 
+Array knows as Iterable object in javascript, which can be iterate one by one.
+Iterable object has Symbol(Symbol.iterator) within it in prototype.
+Javascipt introduces 4 new iterable objects Sets, Weak Sets, Maps, Weak Maps.
+Object with key/value pair is not considered as iterable object.
+-->
+
+<!-- https://www.youtube.com/watch?v=ZNrJPzjNt-o&t=309s -->
+
+<html>
+<head>
+  <script>
+// 1-Iterator
+ const array = [1,2,3]
+ console.dir(array);
+ 
+ //it will return
+ //[[Prototype]]-->Symbol(Symbol.iterator)
+   
+// 2-Sets, it is used for unique values
+//for of is also introduced with iterable object.
+let mySet = new Set([1,2,2,3,4])
+
+for(let val of mySet){
+  console.log(val);
+}
+
+//3-Iterator 
+let myArray = [1,2,3]
+
+let iterator = myArray[Symbol.iterator]();
+
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+// Output:
+// {value:1, done:false}
+// {value:2, done:false}
+// {value:3, done:false}
+// {value:undefined, done:true}
+
+
+  </script>
+
+</head>
+
+<body>
+  TEST
+</body>
+
+</html>

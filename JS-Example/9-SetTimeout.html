@@ -1,0 +1,81 @@
+<html>
+
+<head>
+  <script>
+    //1-want to print 1 to 5 1 after 1 second 2 after 2 second 3 after 3 second
+    // function test() {
+    //   for (var i = 0; i <= 5; i++) {
+    //     setTimeout(() => {
+    //       console.log('i', i);
+    //     }, i * 1000)
+    //   }
+    //   console.log('shoev');
+    // }
+    // test()
+
+    //output:6 6 6 6 6 6
+    //setTimeout will go to ajaxcall in v8 engine with reference of i, 
+    //and will set in call stack after runing the complete javascript.
+    //i is stored to window object so at last it become to 6
+
+    //2-Change above example to let which is blocked scope will not be attached to window object.
+    // function test1() {
+    //   for (let i = 0; i <= 5; i++) {
+    //     setTimeout(() => {
+    //       console.log('i', i);
+    //     }, i * 1000)
+    //   }
+    //   console.log('shoev');
+    // }
+    // test1()
+
+    //3-setTimeout with closures
+    // function setTimeoutWithClosure() {
+    //   for (var i = 1; i <= 5; i++) {
+    //     function close(x) {
+    //       setTimeout(() => {
+    //         console.log('x-setTimeoutWithClosure',x);          
+    //       }, i * 1000)
+    //     }
+    //     close(i)
+    //   }
+    // }
+    // setTimeoutWithClosure();
+
+    //4-(https://www.youtube.com/watch?v=nqsPmuicJJc) trust issue with setTimeout.
+    //setTimeout sometimes behaves different as the time defined in it. due to no of line excutes after the setTimeout method.
+     console.log('start')
+     setTimeout(()=>{
+      console.log('Callback');
+     },5000)
+     //.....if million of line code here at this point which takes around 10 second to excutes, then setTimeout callback
+     //will come back after 10second. because event loop tracks the stackque('all callbacks') and  callstack if callstack is 
+     //empty then only event loop put callback to callstack.
+     let startDate = new Date().getTime()  // gives time in milisecond like 12300000.
+     let endDate = startDate;
+     while(endDate<startDate+10000){
+       endDate = new Date().getTime();
+     }
+     ///while loop block main thread for 10second then will run 'end' after that 'callback'
+     console.log('end')
+
+
+    //5-
+    console.log('start2')
+    setTimeout(()=>{
+      console.log('callBack');
+      
+    },5000)
+    console.log('end2')
+
+    //output-> start2 end2 callBack
+
+
+  </script>
+</head>
+
+<body>
+  sdfsdfsdf
+</body>
+
+</html>

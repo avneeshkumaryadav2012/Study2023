@@ -1,0 +1,50 @@
+<!-- 
+1-Javascript is synchronous language, it runs the code line by line.
+
+2-Javascript runs on single thread. it runs code line by line and must finish executing a piece of code before 
+moving onto the next.
+
+3-Everything in javascript happens inside the execution context.
+Execution context can be asssumed like a box divided into 2 parts 1 is Memory(Variable Environment) 
+and 2nd is Code(Thread of execution).
+Memory contains all the varibla and functions inside it. and Code is used to execute the program.
+-->
+
+<!-- https://www.youtube.com/watch?v=ZvbzSrg0afE -->
+
+<html>
+
+<head>
+  <script>
+   console.log('Program started');
+   for(let i=0;i<2;i++){
+     console.log('value of i='+i);
+   }
+
+   function name(){
+     console.log('My name is shoeb');
+   }
+
+   console.log('After name fuction');
+   
+   name();
+   
+   console.log('THE END!');
+
+  //  Output: 
+  //  Program started
+  //  value of i=0
+  //  value of i=1
+  //  After name function
+  //  My name is shoeb
+  //  THE END!
+  </script>
+
+
+</head>
+
+<body>
+  TEST
+</body>
+
+</html>

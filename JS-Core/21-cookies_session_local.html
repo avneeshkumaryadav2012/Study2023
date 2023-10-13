@@ -1,0 +1,63 @@
+<html>
+
+<head>
+  <script>
+  //Cookies
+  //When you assign a string to document.cookie, the browser parse it as a cookie and adds it trt o o the list of cookies
+  // There are several part of cookies many of them are optional.
+  // the cookie will be removed when browser closed
+
+  // Optional cookies attributes
+  // expires, max-age,domain,path,secure
+  // if not set default value for expires or max-age then the default value of them are when you close browser.
+
+  // Syntax
+  //  document.cookie = "name=value";
+  //  document.cookie = "name=value;expires=date;domain=domain;path=path"
+  //  document.cookie = "name=value;max-age=insecond;domain=domain;path=path"
+    
+    // document.cookie ="name=shoeb";
+    // document.cookie ="name=shoeb1; expires=Tuesday, 31-may-2022";
+    // document.cookie ="name=shoeb2; max-age=3000";
+    // console.log('document-->',  document.cookie)
+
+    //SessionStorage
+    //is availale only for the duration of browser session and is deleted when tab or window is closed.
+
+    // sessionStorage.setItem('name','prince')
+    // console.log(sessionStorage.getItem('name'))
+    //  sessionStorage.clear()  //to remove all the data
+
+    
+
+    //LocalStorage
+    // The data stored in localStorage persists until explicitly deleted. 
+    // Changes made are saved and available for all current and future visits to the site.
+    //
+
+    // localStorage.setItem('name','shoeb')
+    // console.log(localStorage.getItem('name'))
+    // localStorage.clear()
+
+
+    // localStorage API VS cookies
+
+    // LocalStorage
+    // It never sends data to server with http request, hence it makes the request faster
+    //capicity is limited to 5mb per domain.
+    //data never expires
+
+
+    //Cookies
+    //It sends data with every http request.it can slow the server request.
+    //it gives the limit of 4095 bytes
+    //it expires by time or session
+    
+  </script>
+</head>
+
+<body>
+   sdfsdf
+</body>
+
+</html>

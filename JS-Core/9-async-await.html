@@ -1,0 +1,38 @@
+<!-- 
+Async await is used to replace the promise which is little bit complex,
+async await is introduced ECMA-2017 after the Promise introduce ECMA-2015.
+Using async await does not need to resolve and reject, it  always returns data in promise.
+-->
+
+<!-- https://www.youtube.com/watch?v=AyJq1RRaY_k -->
+
+<html>
+
+<head>
+  <script>
+    async function shoeb(){
+      const response = await fetch('https://api.github.com/users')
+      return response
+    }
+
+
+    shoeb().then(data=>{
+      console.log('data',data);
+    })
+  </script>
+
+  <!-- Output:
+  1
+  2
+  5
+  3
+  4
+  data:[{login:'sdf', id:1},{login:'abc', id:2}...so on] -->
+
+</head>
+
+<body>
+  TEST
+</body>
+
+</html>
