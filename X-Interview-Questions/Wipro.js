@@ -5,7 +5,7 @@ HTML & CSS
 - [ ] `Element Vs Tag`
 - [ ] `Declear Doc Type`
 - [ ] `Semantic types in html `
-- [ ] `HTML Web API’s`
+- [ ] `HTML Web API's`
 - [ ] `Box Model in CSS`
 
 
